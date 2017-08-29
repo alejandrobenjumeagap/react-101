@@ -1,0 +1,29 @@
+.mask {
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  visibility: hidden;
+  overflow: auto;
+  padding: 16px;
+  transition: opacity 500ms ease-in-out;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  align-items: center;
+}
+
+.mask.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mask.is-fixed {
+  position: fixed;
+}
+
+.content {
+  width: 100%;
+}

@@ -1,0 +1,120 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+  transition: box-shadow 300ms ease-in-out;
+  border-radius: 3px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.24), 0 0 2px 0 rgba(0,0,0,0.12);
+  min-height: 100px;
+}
+
+.card:not(.is-loading):not(.is-disabled):hover {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.24), 0 0 2px 0 rgba(0,0,0,0.12), 0 0 10px 0 rgba(0,0,0,0.07);;
+}
+
+.card.is-disabled {
+  user-select: none;
+}
+
+.card.is-disabled::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  cursor: not-allowed;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.card.is-center {
+  width: 100%;
+  max-width: 384px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card.is-center .header,
+.card.is-center .main {
+  transition: padding 200ms ease-in-out;
+  flex-shrink: 0;
+}
+
+@media only screen and (min-width : 480px) {
+  .card.is-center .header,
+  .card.is-center .main {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .card.is-center .header,
+  .card.is-center .main {
+    padding-right: 34px;
+    padding-left: 34px;
+  }
+}
+
+@media only screen and (min-width : 480px) {
+  .card .main {
+    padding-bottom: 18px;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .card .main {
+    padding-bottom: 31.8px;
+  }
+}
+
+.bar,
+.header,
+.main {
+  z-index: 0;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 8px;
+  border-radius: 3px 3px 0 0;
+  background-color: #B1B0B0;
+}
+
+.header {
+  padding: 25px 10px 15px;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: -0.7px;
+  color: #000;
+  font-size: 32px;
+}
+
+.main {
+  height: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #000;
+  flex-grow: 1;
+}
+
+.mask {
+  z-index: 2;
+  cursor: not-allowed;
+}
+
+.is-disabled .mask {
+  background-color: transparent;
+}
+
+.loader {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
